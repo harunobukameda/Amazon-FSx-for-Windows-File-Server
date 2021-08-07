@@ -1,0 +1,5 @@
+# ランダムな文字列を生成します
+$random = $(Get-Random)
+
+# 書き込みのテストを行います
+C:\DiskSpd\amd64\DiskSpd.exe -d60 -c2G -s64K -w100 -t1 -o32 -b64K -Sh -L Z:\${env:computername}-$random.dat

@@ -1,0 +1,10 @@
+# ランダムな文字列を生成します
+$random = $(Get-Random)
+
+# ファイルサーバーに1GBのファイルを作ります
+fsutil file createnew Z:\${env:computername}-$random.dat 1000000000
+
+# ここでTask ManagerとResource Monitorを起動しておきましょう
+
+# 読み込みのテストを行います
+C:\DiskSpd\amd64\DiskSpd.exe -d60 -w0 -r -t1 -o32 -b64K -Su -L Z:\${env:computername}-$random.dat
